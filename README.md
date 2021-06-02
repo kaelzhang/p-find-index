@@ -26,8 +26,32 @@ $ npm i p-find-index
 ## Usage
 
 ```js
-const p_find_index = require('p-find-index')
+import {
+  find,
+  findIndex
+} from 'p-find-index'
+
+import delay from 'delay'
+
+const input = [
+  delay(100).then(() => 100),
+  delay(50).then(() => 10),
+  delay(60).then(() => 90)
+]
+
+const matcher = value => value > 50
+
+console.log(await find(input, matcher))                         // 100
+console.log(await find(input, matcher, {leftMost: false}))      // 90
+console.log(await findIndex(input, matcher))                    // 2
+console.log(await findIndex(input, matcher, {leftMost: false})) // 0
 ```
+
+### find(promises, matcher, options): any
+### findIndex(promises, matcher, options): number
+
+- **promises** `Iterable<Thenable | any>`
+- **matcher** `Function`
 
 ## License
 

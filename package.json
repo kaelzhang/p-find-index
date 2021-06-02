@@ -21,10 +21,22 @@
     "url": "git://github.com/kaelzhang/p-find-index.git"
   },
   "keywords": [
-    "p-find-index"
+    "p-find-index",
+    "promises",
+    "find",
+    "resolved",
+    "await",
+    "collection",
+    "iterable",
+    "race",
+    "fulfilled",
+    "fastest",
+    "async",
+    "wait",
+    "bluebird"
   ],
   "engines": {
-    "node": ">= 6"
+    "node": ">= 12"
   },
   "ava": {
     "files": [
@@ -40,8 +52,13 @@
     "@ostai/eslint-config": "^3.5.0",
     "ava": "^3.15.0",
     "codecov": "^3.8.2",
+    "delay": "^5.0.0",
     "eslint": "^7.27.0",
     "eslint-plugin-import": "^2.23.4",
     "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "aggregate-error": "^3.1.0",
+    "p-cancelable": "^1.1.0"
   }
 }
