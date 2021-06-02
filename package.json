@@ -1,0 +1,47 @@
+{
+  "name": "p-find-index",
+  "version": "1.0.0",
+  "description": "Wait for a left-most matched promise to be fulfilled",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "NODE_DEBUG=p-find-index nyc ava --timeout=10s --verbose",
+    "test:dev": "NODE_DEBUG=p-find-index nyc ava --timeout=10s --verbose && npm run report:dev",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
+    "posttest": "npm run report",
+    "report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "report:dev": "nyc report --reporter=html && npm run report:open",
+    "report:open": "open coverage/index.html"
+  },
+  "files": [
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaelzhang/p-find-index.git"
+  },
+  "keywords": [
+    "p-find-index"
+  ],
+  "engines": {
+    "node": ">= 6"
+  },
+  "ava": {
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "author": "kaelzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/p-find-index/issues"
+  },
+  "devDependencies": {
+    "@ostai/eslint-config": "^3.5.0",
+    "ava": "^3.15.0",
+    "codecov": "^3.8.2",
+    "eslint": "^7.27.0",
+    "eslint-plugin-import": "^2.23.4",
+    "nyc": "^15.1.0"
+  }
+}
