@@ -47,10 +47,10 @@ console.log(await findIndex(input, matcher))                    // 2
 console.log(await findIndex(input, matcher, {leftMost: false})) // 0
 ```
 
-### find(promises, matcher, options): any
-### findIndex(promises, matcher, options): number
+### find(iterable, matcher, options): any
+### findIndex(iterable, matcher, options): number
 
-- **promises** `Iterable<Thenable | any>`
+- **iterable** `Iterable<Thenable | any>`
 - **matcher** `Function`
 
 ## License

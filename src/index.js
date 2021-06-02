@@ -85,7 +85,7 @@ const _find = (iterable, matcher, {
       }
     }
 
-    const run = async (promise, i) => {
+    const run = async (promise, index) => {
       try {
         const value = await promise
 
@@ -95,20 +95,22 @@ const _find = (iterable, matcher, {
 
         const matched = matcher(value)
 
-        match_results[i] = {
+        match_results[index] = {
           matched,
-          value
+          value,
+          index
         }
 
-        if (matched && (!leftMost || i === start)) {
+        if (matched && (!leftMost || index === start)) {
           resolve(value)
           return
         }
 
         checkResults()
       } catch (error) {
-        match_results[i] = {
-          matched: false
+        match_results[index] = {
+          matched: false,
+          index
         }
 
         errors.push(error)
